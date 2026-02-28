@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+  --navy: #091228;
+  --peach: #F7A5A5;
+  --yellow: #FFDBB6;
+  --background: #FFF2EF;
+  --gray: #c1c1c1ee;
+  --lightGreen: #B7E5CD;
+  --logoColor: #F6F09F;
+  --yellow2: #ffc284;
+}
+
+
+/* ================================================================ */
+/* ================================================================ */
+/* ================================================================ */
+
+
+
+/* .left-section div {
+    width: 200px;
+}
+
+.left-section div img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.left-section div:nth-child(1) img {
+    box-shadow: 4px -3px 0px var(--peach);
+}
+
+.left-section div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.left-section div:nth-child(2) img:nth-child(2) {
+    box-shadow: 4px -3px 0px var(--lightGreen);
+}
+
+.left-section div:nth-child(2) img:nth-child(1) {
+    width: 60%;
+} */

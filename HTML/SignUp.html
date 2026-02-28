@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="selection:bg-[#ffdbb6] selection:text-[#091228]">
+
+<head>
+    <title>Sign Up</title>
+    <!-- <link rel="stylesheet" href="../CSS/SignUpStyle.css"> -->
+
+    <!-- <link rel="icon" href="../images/exam-time.png" type="image/png"> -->
+
+
+    <link rel="icon" href="../images/puzzle.png" type="image/png" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+
+    <style>
+      @keyframes fade-in {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in {
+        animation: fade-in 1s forwards;
+      }
+    </style>
+
+    <!-- 
+             colors :
+             navy = #091228
+             peach = F7A5A5
+             yellow = FFDBB6
+             background = FFF2EF
+             logoColor = #F6F09F
+             yellow2 = #ffc284
+    
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+
+
+</head>
+
+<body class="bg-[#FFF2EF] font-[Poppins] flex justify-center items-center">
+    <div id="main" class="flex w-[100%] justify-center text-center mb-[100px] flex-wrap opacity-0 translate-y-10">
+        <section class="left bg-[linear-gradient(#132651d6,#db979791),url('../images/pexels-charlotte-may-5965699.jpg')] bg-cover bg-no-repeat flex flex-col justify-center p-[40px] w-[350px] lg:w-[460px] shadow-[7px_6px_10px_0px_rgb(66_64_64)] rounded-lg text-center items-center z-[99]">
+            <p class="text-[#ffdbb6] font-bold text-[30px] capitalize">welcome here!</p>
+            <p class="text-[#fff2ef] text-[13px]">We’re happy to see you here.<br> Let’s begin your journey.</p>
+            <button onclick="login()" class=" mt-[50px] p-[10px] border-none rounded-full w-[200px] dark:bg-[#FFF2EF] capitalize cursor-pointer active:scale-95 transition duration-300 bg-[#ffdbb656] text-white hover:bg-[#f7a5a5] hover:text-white hover:shadow-lg hover:shadow-[#707070ee]"
+            >Log In</button>
+        </section>
+
+      
+            <section class="right bg-white rounded-lg p-[80px] flex flex-col items-center w-[350px] lg:w-fit">
+                <p class="font-bold capitalize text-[50px] text-[#091228] m-0">sign up</p>
+
+                <div class="buttons p-[10px] flex gap-[15px]">
+                    <button class="rounded-full bg-[#ffdbb656] p-[10px] w-[50px] h-[50px] flex justify-center items-center cursor-pointer border-none hover:bg-[#f7a5a55a] active:scale-95 transition duration-300"><img src="../images/facebook.png" alt="facebook" class="w-[24px]"></button>
+                    <button class="rounded-full bg-[#ffdbb656] p-[10px] w-[50px] h-[50px] flex justify-center items-center cursor-pointer border-none hover:bg-[#f7a5a55a] active:scale-95 transition duration-300"><img src="../images/google.png" alt="google" class="w-[24px]"></button>
+                    <button class="rounded-full bg-[#ffdbb656] p-[10px] w-[50px] h-[50px] flex justify-center items-center cursor-pointer border-none hover:bg-[#f7a5a55a] active:scale-95 transition duration-300"><img src="../images/linkedin.png" alt="linkedin" class="w-[24px]"></button>
+                </div>
+
+                <p class="text-[11px] text-[#091228]">Or use your account information to Sign Up.</p>
+
+                <form action="" id="sign-up-form" class="flex flex-col items-center gap-[5px] mt-[20px]">
+                    <input type="text" id="firstName" placeholder="First Name" class="bg-[#eee] border-none p-[10px] rounded-full pl-[15px] w-[300px] placeholder:text-[13px] placeholder:text-[#ccc] focus:outline-[solid] focus:outline-[1px] outline-[#f7a5a5] text-[14px]">
+                    <span id="first-name"></span>
+
+                    <input type="text" id="lastName" placeholder="Last Name" class="bg-[#eee] border-none p-[10px] rounded-full pl-[15px] w-[300px] placeholder:text-[13px] placeholder:text-[#ccc] focus:outline-[solid] focus:outline-[1px] outline-[#f7a5a5] text-[14px]">
+                    <span id="last-name"></span>
+
+                    <input type="email" id="emailInput" placeholder="E-mail" class="bg-[#eee] border-none p-[10px] rounded-full pl-[15px] w-[300px] placeholder:text-[13px] placeholder:text-[#ccc] focus:outline-[solid] focus:outline-[1px] outline-[#f7a5a5] text-[14px]">
+                    <span id="emailWarning"></span>
+
+                    <input type="password" id="passwordInput" placeholder="Password" class="bg-[#eee] border-none p-[10px] rounded-full pl-[15px] w-[300px] placeholder:text-[13px] placeholder:text-[#ccc] focus:outline-[solid] focus:outline-[1px] outline-[#f7a5a5] text-[14px]">
+                    <span id="passwordWarning"></span>
+
+                    <input type="password" id="re-enterPassword" placeholder="Re-Enter Password" class="bg-[#eee] border-none p-[10px] rounded-full pl-[15px] w-[300px] placeholder:text-[13px] placeholder:text-[#ccc] focus:outline-[solid] focus:outline-[1px] outline-[#f7a5a5] text-[14px]">
+                    <span id="re-enterPasswordWarning"></span>
+
+                    <span id="all-required"></span>
+
+                    <button type="submit" class="p-[10px] border-none mt-[10px] rounded-full w-[200px] capitalize cursor-pointer active:scale-95 transition duration-300 bg-[#091228] text-white hover:bg-[#547792] hover:shadow-lg hover:shadow-[#707070ee]">Sign Up</button>
+                </form>
+            </section>
+        </div>
+    <!-- <div
+      id="cursor-shadow"
+      class="fixed w-[100px] h-[100px] dark:bg-[#f7a5a557] bg-[#f7a5a5aa] rounded-full pointer-events-none blur-[50px] -translate-x-1/2 -translate-y-1/2 transition-all duration-75 z-[9999]"
+    ></div> -->
+
+    <!-- <script src="SignUpScript.js"></script> -->
+    <script src="../JS/signUp.js"></script>
+    <script src="../JS/script.js"></script>
+    <script>
+
+
+      const shadow = document.getElementById("cursor-shadow");
+
+      document.addEventListener("mousemove", (e) => {
+        shadow.style.left = e.clientX + "px";
+        shadow.style.top = e.clientY + "px";
+      });
+
+  window.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("main");
+
+    form.classList.add("animate-fade-in");
+  });
+</script>
+</body>
+</html>

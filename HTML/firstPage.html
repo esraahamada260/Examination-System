@@ -1,0 +1,1624 @@
+<!doctype html>
+<html lang="en" class="selection:bg-[#FFDBB6] selection:text-[#091228]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="icon" href="../images/puzzle.png" type="image/png" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+
+    <style>
+      @keyframes fade-in {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in {
+        animation: fade-in 1s forwards;
+      }
+    </style>
+
+    <!-- 
+             colors :
+             navy = #091228
+             peach = F7A5A5
+             yellow = FFDBB6
+             background = FFF2EF
+             logoColor = #F6F09F
+             yellow2 = #ffc284
+    
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-[Poppins] !m-0 bg-[#FFF2EF] dark:bg-[#091228] transition-colors duration-500">
+    <nav
+      class="flex gap-5 items-center justify-between p-4 bg-white dark:bg-[#091228] dark:shadow-[#fff2ef2e] rounded-full shadow-lg fixed top-[30px] left-[40px] right-[40px] z-50000"
+    >
+      <div class="logo flex gap-2 items-center justify-center">
+        <img
+          src="../images/puzzle.png"
+          alt="logo"
+          class="w-[26px] md:w-[36px]"
+        />
+        <p
+          class="uppercase font-bold tracking-tighter text-[#091228] text-[14px] md:text-[24px] dark:text-[#FFF2EF]"
+        >
+          eduvance
+        </p>
+      </div>
+
+      <ul class="flex gap-0 sm:gap-5 capitalize text-[#696969] dark:text-[#cccbcb]">
+        <li>
+          <a
+            href="#"
+            class="hover:bg-[#f7a5a54d] focus:bg-[#f7a5a54d] focus:text-[#F7A5A5] active:scale-95 hover:text-[#F7A5A5] pl-3 pr-3 pt-1 pb-1 text-[12px] md:text-[16px] rounded-full cursor-pointer transition duration-300"
+            >home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#about"
+            class="hover:bg-[#f7a5a54d] focus:bg-[#f7a5a54d] focus:text-[#F7A5A5] active:scale-95 hover:text-[#F7A5A5] pl-3 pr-3 pt-1 pb-1 text-[12px] md:text-[16px] rounded-full cursor-pointer transition duration-300"
+            >about</a
+          >
+        </li>
+        <li>
+          <a
+            href="#values"
+            class="hover:bg-[#f7a5a54d] focus:bg-[#f7a5a54d] focus:text-[#F7A5A5] active:scale-95 hover:text-[#F7A5A5] pl-3 pr-3 pt-1 pb-1 text-[12px] md:text-[16px] rounded-full cursor-pointer transition duration-300"
+            >our values</a
+          >
+        </li>
+      </ul>
+
+      <div class="buttons flex gap-2 items-center justify-center">
+        <button
+          onclick="signUp()"
+          class="hidden md:block pl-6 pr-6 pt-1 pb-1 capitalize rounded-full dark:bg-[#F7A5A5] dark:border-[#F7A5A5] dark:hover:bg-[#fcdada] dark:hover:border-[#fcdada] bg-[#091228] text-white border-solid border-[2px] border-[#091228] hover:bg-[#547792] hover:border-[#547792] active:scale-95 transition duration-300"
+        >
+          sign up
+        </button>
+        <p class="font-bold text-[#091228] hidden md:block dark:text-[#F7A5A5]">/</p>
+        <button
+          id="login"
+          onclick="login()"
+          class="hidden md:block pl-6 pr-6 pt-1 pb-1 capitalize rounded-full border dark:border-[#FFF2EF] dark:hover:bg-[#FFF2EF] dark:hover:text-[#091228] dark:text-white border-[#F7A5A5] text-[#F7A5A5] hover:bg-[#fcdada] hover:text-white hover:border-[#fcdada] active:scale-95 transition duration-300"
+        >
+          log in
+        </button>
+
+
+
+          <label class="swap swap-rotate">
+  <!-- this hidden checkbox controls the state -->
+  <input type="checkbox"  id="themeToggle"/>
+
+  <!-- sun icon -->
+  <svg
+    class="swap-on h-10 w-10 fill-[#F7A5A5]"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24">
+    <path
+      d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+  </svg>
+
+  <!-- moon icon -->
+  <svg
+    class="swap-off h-10 w-10 fill-[#091228]"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24">
+    <path
+      d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+  </svg>
+ </label>
+  
+ </div>
+    </nav>
+
+    <main>
+      <section
+        class="hero flex gap-[40px] p-[50px] pb-0 justify-between items-center flex-wrap pt-[120px] flex-col-reverse lg:flex-row mb-6"
+      >
+        <section
+          class="right-section flex flex-col w-[100%] sm:w-[75%] lg:w-[50%] opacity-0 translate-y-10 animate-fade-in"
+        >
+          <p
+            class="text-[25px] md:text-[50px] font-bold text-[#091228] mb-[40px] dark:text-[#FFF2EF]"
+          >
+            Welcome to
+            <span
+              class="dark:text-[#091228] uppercase relative before:absolute before:bg-[#FFDBB6] before:z-[-1] before:top-[-5px] before:left-[-5px] before:content-[''] before:w-[105%] before:h-[100%] before:rounded-tl-[50px] before:rotate-3 before:rounded-br-[50px]"
+              >eduvance</span
+            >
+            <span class="text-[#F7A5A5]">The Online Examination</span> System
+          </p>
+          <p
+            class="text-[#696969] dark:text-[#cccbcb] text-[10px] sm:text-[14px] border-l-solid border-l-[#F7A5A5] border-l-[3px] p-[10px]"
+          >
+            Start your exam journey with a simple and secure online testing
+            system. <br />Learn with prupose grow with
+            <span class="uppercase text-[#F7A5A5]">eduvance</span>.
+          </p>
+          <div class="flex gap-[20px] mt-[40px] items-center flex-wrap">
+            <button
+              onclick="signUp()"
+              class="p-[10px] font-bold border-none rounded-full w-[120px] dark:bg-[#F7A5A5] capitalize cursor-pointer active:scale-95 transition duration-300 bg-[#091228] text-white hover:bg-[#547792] hover:shadow-lg hover:shadow-[#707070ee]"
+            >
+              sign up
+            </button>
+            <button
+              id="login"
+              onclick="login()"
+              class="p-[10px] font-bold border-none rounded-full w-[120px] dark:bg-[#FFF2EF] dark:text-[#091228] capitalize cursor-pointer active:scale-95 transition duration-300 bg-[#F7A5A5] text-white hover:bg-[#eb8b8b] hover:text-white hover:shadow-lg hover:shadow-[#707070ee]"
+            >
+              log in
+            </button>
+
+            <div
+              class="countries flex justify-center flex-col items-center w-[100px]"
+            >
+              <p
+                id="country"
+                class="font-semibold text-[#091228] text-[30px] mb-[-10px] dark:text-[#F7A5A5]"
+              ></p>
+              <p class="capitalize text-[15px] text-[#696969] dark:text-[#cccbcb]">countries</p>
+            </div>
+
+            <div
+              class="students flex justify-center flex-col items-center w-[100px]"
+            >
+              <p
+                id="student"
+                class="font-semibold text-[#091228] text-[30px] mb-[-10px] dark:text-[#F7A5A5]"
+              ></p>
+              <p class="capitalize text-[15px] text-[#696969] dark:text-[#cccbcb]">students</p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="left-section flex gap-[20px] mt-[40px] opacity-0 translate-y-5 animate-fade-in"
+        >
+          <div class="w-[200px] sm:w-[250px]">
+            <img
+              src="../images/pexels-mikhail-nilov-9158999.jpg"
+              alt="image"
+              class="w-[100%] rounded-lg shadow-[4px_-3px_0px_#F7A5A5]"
+            />
+          </div>
+
+          <div
+            class="w-[200px] sm:w-[250px] flex justify-start items-start flex-col gap-[20px]"
+          >
+            <img src="../images/exploration.png" alt="image" class="w-[30%]" />
+            <img
+              src="../images/pexels-mba-classroom-2155665220-34947114.jpg"
+              alt="img"
+              class="w-[100%] rounded-lg shadow-[4px_-3px_0px_#B7E5CD]"
+            />
+          </div>
+        </section>
+      </section>
+
+      <section class="slider p-1 opacity-0 translate-y-10">
+        <div class="flex gap-10 justify-evenly">
+          <!-- الصور -->
+          <img
+            src="../images/images-Photoroom.png"
+            class="w-[48px] opacity-[0.5]"
+          />
+          <img
+            src="../images/images-Photoroom.png"
+            class="w-[48px] opacity-[0.5]"
+          />
+          <img
+            src="../images/images-Photoroom.png"
+            class="w-[48px] opacity-[0.5]"
+          />
+        </div>
+      </section>
+      <section
+        class="cards bg-[#FFDBB6] rounded-2xl p-[40px] m-[50px] opacity-0 translate-y-10 text-[#091228] overflow-hidden"
+      >
+        <div class="header flex justify-between relative">
+          <p class="text-[40px] font-semibold mb-[30px] ml-[40px]">
+            Explore Our<br /><span class="text-[#F7A5A5] dark:text-[#FFF2EF]">Examination</span>
+            System
+          </p>
+          <svg
+            class="absolute top-[-50px] right-[-50px]"
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="200"
+            height="200"
+            x="0"
+            y="0"
+            viewBox="0 0 511.988 511.988"
+            style="enable-background: new 0 0 512 512"
+            xml:space="preserve"
+            class=""
+          >
+            <g>
+              <path
+                d="M155.931 511.57c-46.853.004-88.404-34.729-104.115-77.628-16.002-43.694-1.489-89.444 34.636-118.075L269.2 170.955c38.712-30.68 42.438-82.661 12.281-120.821C251.4 12.068 199.729 3.141 160.932 33.887 125.126 62.323 85.5 104.668 36.273 77.249 10.844 63.084-2.862 36.306.503 7.364c1.086-9.321 16.034-8.015 14.9 1.732-2.652 22.8 8.142 43.893 28.17 55.048 41.665 23.208 78.005-18.157 108.037-42.008 45.184-35.812 106.394-25.785 141.628 18.681 35.426 44.708 30.38 106.149-14.719 141.892L95.771 327.621c-40.354 31.981-45.958 85.931-15.97 127.224 31.807 43.798 89.496 54.703 132.657 20.498l134.574-106.655c32.851-26.035 76.003-29.541 112.612-9.149 36.697 20.44 56.476 59.083 51.618 100.849-1.084 9.323-16.034 8.014-14.9-1.732 4.144-35.624-12.723-68.582-44.017-86.013-31.208-17.382-67.991-14.395-95.997 7.801L221.774 487.099c-20.451 16.209-43.019 24.47-65.843 24.471z"
+                fill="#091228"
+                opacity="1"
+                data-original="#000000"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <!-- <p>Discover the comprehensive examination management system</p> -->
+        <div class="flex gap-9 flex-wrap justify-center">
+          <div class="hover-3d">
+            <div
+              class="bg-white rounded-lg p-[20px] w-[250px] shadow-[1px_1px_20px] shadow-[#bbb3a3]"
+            >
+              <p class="font-bold text-[#FFDBB6] mb-[20px] text-[20px]">
+                Online Exams
+              </p>
+              <p
+                class="text-[#696969] text-[13px] ml-[15px] border-l-solid border-l-[#FFDBB6] border-l-[2px] pl-[10px] mb-[35px]"
+              >
+                Create and manage online exams easily, with multiple question
+                types and automated grading to save time and effort.
+              </p>
+              <div class="flex justify-end">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="100"
+                  height="100"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 66 66"
+                  style="enable-background: new 0 0 512 512"
+                  xml:space="preserve"
+                  class=""
+                >
+                  <g>
+                    <path
+                      fill="#36283B"
+                      d="M52.55 59.19v1.76c0 .78-.63 1.42-1.42 1.42H7.83c-.78 0-1.42-.63-1.42-1.42v-1.76c0-.78.63-1.42 1.42-1.42h43.3c.78 0 1.42.63 1.42 1.42z"
+                      opacity="1"
+                      data-original="#36283b"
+                    ></path>
+                    <path
+                      fill="#DC6098"
+                      d="m50.72 22.26 3.38 33.21c.13 1.27-.8 2.3-2.07 2.3H7.67c-1.27 0-2.4-1.03-2.53-2.3L1.76 22.26c-.13-1.27.8-2.3 2.07-2.3h44.36c1.27 0 2.4 1.03 2.53 2.3z"
+                      opacity="1"
+                      data-original="#dc6098"
+                    ></path>
+                    <path
+                      fill="#F4A6C8"
+                      d="M54.01 57.77H9.65c-1.27 0-2.4-1.03-2.53-2.3L3.75 22.26c-.13-1.27.8-2.3 2.07-2.3h44.36c1.27 0 2.41 1.03 2.54 2.3l2.35 23.14 1.02 10.07c.12 1.27-.81 2.3-2.08 2.3z"
+                      opacity="1"
+                      data-original="#f4a6c8"
+                    ></path>
+                    <path
+                      fill="#F07AAB"
+                      d="M54.01 57.77H9.65c-1.27 0-2.4-1.03-2.53-2.3L3.75 22.26c-.13-1.27.8-2.3 2.07-2.3h11.55c-.21.17-.41.34-.59.53-1.54 1.57-2.08 4.29-.65 5.95.91 1.05 2.34 1.44 3.69 1.78 1.92.48 3.84.97 5.76 1.45-.61 1.65-2.53 2.44-4.28 2.45-1.75 0-3.45-.58-5.19-.82-1.73-.24-3.69-.06-4.92 1.19-1.1 1.12-1.34 2.81-1.52 4.37-.22 1.91-.4 4.03.74 5.58.76 1.03 2 1.63 3.26 1.86s2.56.12 3.84-.01c.82-.09 1.67-.18 2.45.08.78.27 1.46 1.01 1.37 1.83-.1.86-.95 1.41-1.38 2.16-.64 1.15-.14 2.71.92 3.49 1.05.78 2.5.89 3.77.54 1.27-.34 2.39-1.07 3.45-1.85.85-.62 1.71-1.29 2.72-1.57.96-.27 2.4-.12 2.93.87.47.87.28 2.07.82 3.02 1.16 2.05 3.51 3.41 5.84 3.54 3.38.19 6.58-1.63 9.1-3.89a25.64 25.64 0 0 0 5.54-7.13l1.02 10.07c.15 1.29-.78 2.32-2.05 2.32z"
+                      opacity="1"
+                      data-original="#f07aab"
+                    ></path>
+                    <path
+                      fill="#FFFFFF"
+                      d="M10.42 54.35 7.28 23.38H49.4l3.15 30.97z"
+                      opacity="1"
+                      data-original="#ffffff"
+                    ></path>
+                    <path
+                      fill="#FFFFFF"
+                      d="M10.42 54.35 7.28 23.38H49.4l3.15 30.97z"
+                      opacity="1"
+                      data-original="#ffffff"
+                    ></path>
+                    <path
+                      fill="#1E1E1E"
+                      d="m8.29 24.18 3.07 30.17h-.93L7.28 23.38H49.4l.08.8z"
+                      opacity="1"
+                      data-original="#1e1e1e"
+                    ></path>
+                    <path
+                      fill="#513C4F"
+                      d="M64.25 59.19v1.76c0 .78-.63 1.42-1.42 1.42H23c-.78 0-1.42-.63-1.42-1.42v-1.76c0-.78.63-1.42 1.42-1.42h39.83c.78 0 1.42.63 1.42 1.42z"
+                      opacity="1"
+                      data-original="#513c4f"
+                    ></path>
+                    <path
+                      fill="#DBF0FA"
+                      d="M50.01 54.35H13.35l-4.1-39.24c-.79-5.92.78-9.19 5.11-8.31 1.12.23 2.5 1.07 3.28 3.48.19.58.91.78 1.37.35 3.33-3.09 7.91-7.27 24.92-6.98a1.657 1.657 0 0 1 1.63 1.52l3.46 38.3z"
+                      opacity="1"
+                      data-original="#dbf0fa"
+                      class=""
+                    ></path>
+                    <path
+                      fill="#B8DEF5"
+                      d="M44.67 40.15c-.18-1.09.05-2.03.51-2.11.47-.08 1 .74 1.18 1.82s-.05 2.03-.51 2.11c-.47.07-1-.74-1.18-1.82zM41.84 33.1c-.45-2.63.11-4.92 1.25-5.11 1.13-.19 2.41 1.78 2.86 4.42.44 2.63-.11 4.91-1.25 5.1s-2.41-1.78-2.86-4.41zM40.58 26.86c-.14-.84.04-1.57.4-1.63s.77.57.91 1.41-.04 1.56-.4 1.62-.77-.57-.91-1.4z"
+                      opacity="1"
+                      data-original="#b8def5"
+                    ></path>
+                    <path
+                      fill="#B8DEF5"
+                      d="M50.01 54.35H13.35l-4.1-39.24c-.79-5.92.78-9.19 5.11-8.31 1.12.23 2.5 1.07 3.28 3.48.19.58.91.78 1.37.35 3.33-3.09 7.91-7.27 24.92-6.98.59.01 1.1.32 1.39.79-5.77-.77-11.88 1.17-16.06 5.24-.85.83-1.64 1.76-2.09 2.86s-.52 2.4.04 3.45c.41.78 1.12 1.35 1.68 2.03.57.67 1.01 1.58.75 2.42-.26.83-1.14 1.33-2 1.44s-1.73-.07-2.59-.17c-1.86-.21-3.8.01-5.44.92-1.63.9-2.91 2.55-3.09 4.41s.9 3.85 2.66 4.47c1.38.49 3.21.27 4.02 1.49.64.96.2 2.3-.58 3.14-.79.84-1.85 1.35-2.76 2.07-.91.71-1.7 1.77-1.56 2.91.17 1.37 1.7 2.26 3.08 2.13s2.56-1.03 3.5-2.04c.94-1.02 1.71-2.18 2.72-3.12 1.1-1.02 2.83-1.72 4.06-.87.89.62 1.17 1.85 1 2.92-.37 2.4-3.23 5.45-1.21 7.7 2.13 2.37 6.08 2.98 9.04 2.23 3.56-.9 6.49-3.51 8.53-6.58z"
+                      opacity="1"
+                      data-original="#b8def5"
+                    ></path>
+                    <path
+                      fill="#513C4F"
+                      d="M38.47 3.72c-12.6.6-16.51 4.17-19.46 6.91a.839.839 0 0 1-1.37-.35c-.78-2.41-2.16-3.25-3.28-3.48-.85-.17-1.6-.19-2.24-.05 1.62-.4 11.63-2.71 26.35-3.03zM18.21 19.81c-.07 0-.14-.02-.19-.07s-.08-.1-.09-.17l-.65-4.92h-1.77c-.07 0-.14-.02-.19-.07s-.08-.1-.09-.17l-.13-1.02c-.01-.07.01-.13.05-.17s.1-.07.17-.07h5.36c.07 0 .14.02.19.07.05.04.08.1.09.17l.13 1.02c.01.06-.01.12-.05.17s-.1.07-.17.07H19.1l.65 4.92c.01.06-.01.12-.05.17s-.1.07-.17.07zM23.36 19.81c-.07 0-.14-.02-.19-.07s-.08-.1-.09-.17l-.81-6.17c-.01-.07.01-.13.05-.17s.1-.07.17-.07h4.65c.07 0 .14.02.19.07.05.04.08.1.09.17l.12.89c.01.07-.01.13-.05.17s-.1.07-.17.07h-3.18l.17 1.28h2.96c.07 0 .14.02.19.07s.08.11.09.18l.11.83c.01.06-.01.12-.05.17s-.1.07-.17.07h-2.96l.17 1.32h3.26c.07 0 .14.02.19.07.05.04.08.1.09.17l.12.89c.01.06-.01.12-.05.17s-.1.07-.17.07h-4.73zM32.5 19.91c-.66 0-1.23-.09-1.69-.27s-.83-.42-1.09-.71-.42-.6-.48-.93c-.01-.05.01-.1.05-.14s.09-.06.15-.06h1.25c.09 0 .17.02.22.05s.1.07.15.12c.07.09.15.19.26.28s.25.16.41.21c.17.05.36.08.59.08.38 0 .67-.06.85-.17s.26-.27.23-.47c-.02-.15-.09-.26-.21-.35s-.3-.17-.54-.24c-.25-.07-.57-.15-.97-.22-.52-.1-.97-.23-1.34-.39-.38-.16-.68-.37-.9-.64-.22-.26-.36-.59-.41-.98s.02-.73.21-1.03.48-.54.87-.71.87-.26 1.43-.26c.46 0 .87.06 1.23.17s.68.27.94.46.47.39.62.6.24.42.28.62c.01.05-.01.1-.04.14s-.08.06-.15.06h-1.31a.38.38 0 0 1-.19-.04.61.61 0 0 1-.16-.12c-.06-.14-.18-.26-.36-.37-.18-.1-.41-.16-.68-.16-.29 0-.51.05-.66.15s-.21.25-.18.45c.02.13.08.24.18.33s.26.18.48.25.52.14.89.22c.62.11 1.12.24 1.52.4.39.16.69.37.9.63s.34.58.39.96c.06.43-.02.8-.24 1.11s-.54.55-.97.72-.94.25-1.53.25zM38.62 19.81c-.07 0-.14-.02-.19-.07s-.08-.1-.09-.17l-.65-4.92h-1.77c-.07 0-.14-.02-.19-.07s-.08-.1-.09-.17l-.13-1.02c-.01-.07.01-.13.05-.17s.1-.07.17-.07h5.36c.07 0 .14.02.19.07.05.04.08.1.09.17l.13 1.02c.01.06-.01.12-.05.17s-.1.07-.17.07H39.5l.65 4.92c.01.06-.01.12-.05.17s-.1.07-.17.07z"
+                      opacity="1"
+                      data-original="#513c4f"
+                    ></path>
+                    <path
+                      fill="#FFFFFF"
+                      d="M22.21 48.7c.15 1.18-.69 2.21-1.87 2.29-1.18.09-2.25-.8-2.4-1.98s.69-2.21 1.87-2.29c1.17-.08 2.25.8 2.4 1.98zM18.96 25.81c.15 1.18-.69 2.21-1.87 2.29-1.18.09-2.25-.8-2.4-1.98s.69-2.21 1.87-2.29c1.18-.09 2.26.8 2.4 1.98zM20.05 33.44c.15 1.18-.69 2.21-1.87 2.29-1.18.09-2.25-.8-2.4-1.98s.69-2.21 1.87-2.29c1.17-.08 2.25.8 2.4 1.98zM21.13 41.07c.15 1.18-.69 2.21-1.87 2.29-1.18.09-2.25-.8-2.4-1.98s.69-2.21 1.87-2.29c1.17-.08 2.25.8 2.4 1.98z"
+                      opacity="1"
+                      data-original="#ffffff"
+                    ></path>
+                    <path
+                      fill="#513C4F"
+                      d="M16.22 27.21a.25.25 0 0 1-.14-.04.254.254 0 0 1-.07-.34l1.26-1.87c.08-.11.23-.14.34-.07.11.08.14.23.07.34l-1.26 1.87a.23.23 0 0 1-.2.11z"
+                      opacity="1"
+                      data-original="#513c4f"
+                    ></path>
+                    <path
+                      fill="#513C4F"
+                      d="M17.66 27.1c-.06 0-.13-.02-.17-.07l-1.62-1.65a.26.26 0 0 1 0-.35c.1-.09.25-.09.35 0l1.62 1.65c.09.1.09.25 0 .35-.06.05-.12.07-.18.07zM17.73 34.63a.25.25 0 0 1-.18-.08l-.49-.53c-.09-.1-.08-.25.01-.34.1-.09.25-.08.34.01l.28.31.87-1.26c.08-.11.23-.14.34-.06s.14.23.06.34l-1.04 1.51c-.04.06-.11.1-.18.11 0-.01-.01-.01-.01-.01zM18.29 42.35a.25.25 0 0 1-.14-.04.254.254 0 0 1-.07-.34l1.26-1.87c.08-.11.23-.14.34-.07.11.08.14.23.07.34l-1.26 1.87c-.05.07-.13.11-.2.11z"
+                      opacity="1"
+                      data-original="#513c4f"
+                    ></path>
+                    <path
+                      fill="#513C4F"
+                      d="M19.73 42.24c-.06 0-.13-.02-.17-.07l-1.62-1.65a.26.26 0 0 1 0-.35c.1-.09.25-.09.35 0l1.62 1.65c.09.1.09.25 0 .35-.06.05-.12.07-.18.07zM19.79 49.76a.25.25 0 0 1-.18-.08l-.49-.53c-.09-.1-.08-.25.01-.34.1-.09.25-.08.34.01l.28.31.87-1.26c.08-.11.23-.14.34-.06s.14.23.06.34l-1.04 1.51c-.04.06-.11.1-.18.11 0-.01 0-.01-.01-.01zM42.63 24.69H22.27c-.13 0-.24-.11-.24-.24s.11-.24.24-.24h20.36c.13 0 .24.11.24.24s-.11.24-.24.24zM38.04 27.21H22.27c-.13 0-.24-.11-.24-.24s.11-.24.24-.24h15.77c.13 0 .24.11.24.24s-.11.24-.24.24zM42.63 32.36H22.95c-.13 0-.24-.11-.24-.24s.11-.24.24-.24h19.68c.13 0 .24.11.24.24s-.11.24-.24.24zM38.04 34.88H22.95c-.13 0-.24-.11-.24-.24s.11-.24.24-.24h15.09c.13 0 .24.11.24.24s-.11.24-.24.24zM42.63 40.03H23.81c-.13 0-.24-.11-.24-.24s.11-.24.24-.24h18.82c.13 0 .24.11.24.24 0 .14-.11.24-.24.24zM38.04 42.55H23.81c-.13 0-.24-.11-.24-.24s.11-.24.24-.24h14.23c.13 0 .24.11.24.24s-.11.24-.24.24zM42.63 47.85H24.67c-.13 0-.24-.11-.24-.24s.11-.24.24-.24h17.96c.13 0 .24.11.24.24s-.11.24-.24.24zM38.04 50.36H24.67c-.13 0-.24-.11-.24-.24s.11-.24.24-.24h13.37c.13 0 .24.11.24.24s-.11.24-.24.24z"
+                      opacity="1"
+                      data-original="#513c4f"
+                    ></path>
+                    <path
+                      fill="#FFFFFF"
+                      d="M48.85 60.07c0 .22-.09.42-.23.56s-.34.23-.56.23H37.77a.792.792 0 0 1-.56-1.35c.14-.14.34-.23.56-.23h10.29c.33 0 .62.21.73.5.04.09.06.18.06.29z"
+                      opacity="1"
+                      data-original="#ffffff"
+                    ></path>
+                    <path
+                      fill="#DBF0FA"
+                      d="M48.85 60.07c0 .22-.09.42-.23.56s-.34.23-.56.23H37.77a.792.792 0 0 1-.56-1.35c.14-.14.34-.23.56-.23h.45c-.06.07-.1.15-.12.25-.08.31.18.69.5.66.28-.03.53-.34.8-.23.19.08.25.33.44.42.18.08.38-.03.53-.15s.3-.28.5-.29c.38-.03.63.46 1.01.47.31.01.53-.3.82-.43.34-.15.73-.03 1.08.1.35.14.72.29 1.08.2.44-.11.77-.56 1.22-.55.43 0 .74.42 1.13.62s.89.15 1.24-.11c.15-.11.27-.27.35-.44.03.07.05.16.05.27z"
+                      opacity="1"
+                      data-original="#dbf0fa"
+                      class=""
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <div class="hover-3d">
+            <div
+              class="bg-white rounded-lg p-[20px] w-[250px] shadow-[1px_1px_20px] shadow-[#bbb3a3]"
+            >
+              <p class="font-bold text-[#FFDBB6] mb-[20px] text-[20px]">
+                Question Bank
+              </p>
+              <p
+                class="text-[#696969] text-[13px] ml-[15px] border-l-solid border-l-[#FFDBB6] border-l-[2px] pl-[10px] mb-[55px]"
+              >
+                Store all your questions in a centralized question bank,
+                allowing easy reuse across different exams.
+              </p>
+              <div class="flex justify-end">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="100"
+                  height="100"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 64 64"
+                  style="enable-background: new 0 0 512 512"
+                  xml:space="preserve"
+                  class=""
+                >
+                  <g>
+                    <path
+                      d="M3 57h58v4H3z"
+                      style=""
+                      fill="#FFF3C1"
+                      data-original="#fff3c1"
+                      class=""
+                    ></path>
+                    <path
+                      d="M20 23v-4H4v4h16zM4 50v4h16v-4H4z"
+                      style=""
+                      fill="#C0AB92"
+                      data-original="#c0ab92"
+                    ></path>
+                    <path
+                      d="M7 23h10v27H7z"
+                      style=""
+                      fill="#FFF3C1"
+                      data-original="#fff3c1"
+                      class=""
+                    ></path>
+                    <path
+                      d="M40 23v-4H24v4h16zM24 50v4h16v-4H24z"
+                      style=""
+                      fill="#C0AB92"
+                      data-original="#c0ab92"
+                    ></path>
+                    <path
+                      d="M27 23h10v27H27z"
+                      style=""
+                      fill="#FFF3C1"
+                      data-original="#fff3c1"
+                      class=""
+                    ></path>
+                    <path
+                      d="M60 23v-4H44v4h16zM44 50v4h16v-4H44z"
+                      style=""
+                      fill="#C0AB92"
+                      data-original="#c0ab92"
+                    ></path>
+                    <path
+                      d="M47 23h10v27H47zM32 3 8 12H3v4h58v-4h-5L32 3z"
+                      style=""
+                      fill="#FFF3C1"
+                      data-original="#fff3c1"
+                      class=""
+                    ></path>
+                    <path
+                      d="M7 23h10v2H7zM27 23h10v2H27zM47 23h10v2H47zM3 16h58v2H3z"
+                      style=""
+                      fill="#DFD5A9"
+                      data-original="#dfd5a9"
+                    ></path>
+                    <path
+                      d="M2 62h60v-6H2Zm2-4h56v2H4ZM3 49v6h18v-6h-3V24h3v-6H3v6h3v25Zm16 2v2H5v-2ZM5 22v-2h14v2Zm3 2h8v25H8ZM23 49v6h18v-6h-3V24h3v-6H23v6h3v25Zm16 2v2H25v-2ZM25 22v-2h14v2Zm3 2h8v25h-8ZM43 49v6h18v-6h-3V24h3v-6H43v6h3v25Zm16 2v2H45v-2ZM45 22v-2h14v2Zm3 2h8v25h-8ZM56.181 11 32 1.932 7.819 11H2v6h60v-6ZM60 15H4v-2h4.181L32 4.068 55.819 13H60Z"
+                      style=""
+                      fill="#525280"
+                      data-original="#525280"
+                      class=""
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <div class="hover-3d">
+            <div
+              class="bg-white rounded-lg p-[20px] w-[250px] shadow-[1px_1px_20px] shadow-[#bbb3a3]"
+            >
+              <p class="font-bold text-[#FFDBB6] mb-[20px] text-[20px]">
+                Student Dashboard
+              </p>
+              <p
+                class="text-[#696969] text-[13px] ml-[15px] border-l-solid border-l-[#FFDBB6] border-l-[2px] pl-[10px] mb-[55px]"
+              >
+                A student dashboard that shows exam progress, results, and
+                upcoming test schedules clearly
+              </p>
+              <div class="flex justify-end">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="100"
+                  height="100"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 66 66"
+                  style="enable-background: new 0 0 512 512"
+                  xml:space="preserve"
+                  class=""
+                >
+                  <g>
+                    <path
+                      fill="#5D5B68"
+                      d="M24.86 51.13h16.27l3.78 7.52H21.09z"
+                      opacity="1"
+                      data-original="#5d5b68"
+                    ></path>
+                    <path
+                      fill="#848792"
+                      d="M16.4 58.65h33.19v4H16.4z"
+                      opacity="1"
+                      data-original="#848792"
+                    ></path>
+                    <path
+                      fill="#E6E9EE"
+                      d="M60.52 3.35H5.48C3.56 3.35 2 4.91 2 6.83v36.23h62V6.83c0-1.92-1.56-3.48-3.48-3.48z"
+                      opacity="1"
+                      data-original="#e6e9ee"
+                    ></path>
+                    <path
+                      fill="#C8CED6"
+                      d="M60.95 3.39c.02.15.05.29.05.44 0 20.01-16.22 36.23-36.23 36.23H2v3h62V6.83c0-1.77-1.33-3.22-3.05-3.44z"
+                      opacity="1"
+                      data-original="#c8ced6"
+                    ></path>
+                    <path
+                      fill="#848792"
+                      d="M2 43.06v4.6c0 1.92 1.56 3.48 3.48 3.48h55.04c1.92 0 3.48-1.56 3.48-3.48v-4.6z"
+                      opacity="1"
+                      data-original="#848792"
+                    ></path>
+                    <path
+                      fill="#2C92BF"
+                      d="M46.11 15.05h4.81v23.01h-4.81zM34.829 38.057h-4.81v-13h4.81z"
+                      opacity="1"
+                      data-original="#2c92bf"
+                    ></path>
+                    <path
+                      fill="#4EC4A5"
+                      d="M54.15 25.06h4.81v13h-4.81z"
+                      opacity="1"
+                      data-original="#4ec4a5"
+                    ></path>
+                    <path
+                      fill="#30AA87"
+                      d="M58.958 38.057h-2v-13h2z"
+                      opacity="1"
+                      data-original="#30aa87"
+                    ></path>
+                    <path
+                      fill="#4EC4A5"
+                      d="M42.874 38.062h-4.81v-6.99h4.81z"
+                      opacity="1"
+                      data-original="#4ec4a5"
+                    ></path>
+                    <path
+                      fill="#E1533B"
+                      d="M17.4 8.36c-.08 0-.15-.01-.23-.01C11.56 8.35 7 12.91 7 18.53c0 2.87 1.19 5.45 3.1 7.3l7.3-7.3z"
+                      opacity="1"
+                      data-original="#e1533b"
+                    ></path>
+                    <path
+                      fill="#F8CE01"
+                      d="M10.1 25.83c1.83 1.78 4.32 2.87 7.08 2.87 5.62 0 10.18-4.56 10.18-10.18H17.4z"
+                      opacity="1"
+                      data-original="#f8ce01"
+                    ></path>
+                    <path
+                      fill="#5F6FE7"
+                      d="M17.4 8.36v10.17h9.95c0-5.55-4.43-10.05-9.95-10.17z"
+                      opacity="1"
+                      data-original="#5f6fe7"
+                      class=""
+                    ></path>
+                    <path
+                      fill="#30AA87"
+                      d="M42.869 38.062h-2v-6.99h2z"
+                      opacity="1"
+                      data-original="#30aa87"
+                    ></path>
+                    <path
+                      fill="#1F81A3"
+                      d="M50.914 38.059h-2v-23.01h2zM34.825 38.057h-2v-13h2z"
+                      opacity="1"
+                      data-original="#1f81a3"
+                    ></path>
+                    <path
+                      d="M44.91 59.4H21.09c-.26 0-.5-.13-.64-.36s-.15-.5-.03-.73l3.78-7.51a.76.76 0 0 1 .67-.41h16.27c.28 0 .54.16.67.41l3.78 7.51c.12.23.11.51-.03.73s-.39.36-.65.36zM22.3 57.9h21.39l-3.02-6.01H25.33z"
+                      fill="#000000"
+                      opacity="1"
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="M49.6 63.4H16.4c-.41 0-.75-.34-.75-.75v-4c0-.41.34-.75.75-.75h33.2c.41 0 .75.34.75.75v4c0 .41-.34.75-.75.75zm-32.45-1.5h31.69v-2.5H17.15zM64 43.81H2c-.41 0-.75-.34-.75-.75V6.83c0-2.33 1.9-4.23 4.23-4.23h55.04c2.33 0 4.23 1.9 4.23 4.23v36.23c0 .41-.34.75-.75.75zm-61.25-1.5h60.5V6.83c0-1.5-1.22-2.73-2.73-2.73H5.48c-1.5 0-2.73 1.22-2.73 2.73z"
+                      fill="#000000"
+                      opacity="1"
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="M60.52 51.88H5.48c-2.33 0-4.23-1.9-4.23-4.23v-4.6c0-.41.34-.75.75-.75h62c.41 0 .75.34.75.75v4.6c0 2.34-1.9 4.23-4.23 4.23zM2.75 43.81v3.85c0 1.5 1.22 2.73 2.73 2.73h55.04c1.5 0 2.73-1.22 2.73-2.73v-3.85z"
+                      fill="#000000"
+                      opacity="1"
+                      data-original="#000000"
+                    ></path>
+                    <circle
+                      cx="33"
+                      cy="47.1"
+                      r="1"
+                      fill="#000000"
+                      opacity="1"
+                      data-original="#000000"
+                    ></circle>
+                    <path
+                      d="M50.91 38.81H46.1c-.41 0-.75-.34-.75-.75V15.05c0-.41.34-.75.75-.75h4.81c.41 0 .75.34.75.75v23.01c0 .41-.33.75-.75.75zm-4.05-1.5h3.31V15.8h-3.31zM34.83 38.81h-4.81c-.41 0-.75-.34-.75-.75v-13c0-.41.34-.75.75-.75h4.81c.41 0 .75.34.75.75v13c0 .41-.34.75-.75.75zm-4.06-1.5h3.31v-11.5h-3.31zM58.96 38.81h-4.81c-.41 0-.75-.34-.75-.75v-13c0-.41.34-.75.75-.75h4.81c.41 0 .75.34.75.75v13c0 .41-.34.75-.75.75zm-4.06-1.5h3.31v-11.5H54.9zM42.87 38.81h-4.81c-.41 0-.75-.34-.75-.75v-6.99c0-.41.34-.75.75-.75h4.81c.41 0 .75.34.75.75v6.99c0 .41-.34.75-.75.75zm-4.06-1.5h3.31v-5.49h-3.31zM24.09 35.31H7c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h17.09c.41 0 .75.34.75.75s-.34.75-.75.75zM17.4 38.81H7c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h10.4a.749.749 0 1 1 0 1.5zM10.1 26.58c-.19 0-.38-.07-.52-.21a10.813 10.813 0 0 1-3.33-7.84c0-6.03 4.9-10.93 10.93-10.93.06 0 .11 0 .17.01.41.01.81.34.81.75v10.17c0 .2-.08.39-.22.53l-7.3 7.3c-.16.15-.35.22-.54.22zm6.55-17.46c-4.99.3-8.9 4.4-8.9 9.41 0 2.32.83 4.51 2.36 6.23l6.54-6.54z"
+                      fill="#000000"
+                      opacity="1"
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="M17.18 29.45c-2.85 0-5.55-1.09-7.6-3.08-.14-.14-.23-.33-.23-.53s.08-.39.22-.54l7.3-7.3a.75.75 0 0 1 .53-.22h9.95c.41 0 .75.34.75.75 0 6.02-4.9 10.92-10.92 10.92zm-5.99-3.65a9.376 9.376 0 0 0 5.99 2.15c4.95 0 9.01-3.83 9.4-8.68h-8.86z"
+                      fill="#000000"
+                      opacity="1"
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="M27.35 19.28H17.4c-.41 0-.75-.34-.75-.75V8.36c0-.2.08-.4.23-.54.14-.14.35-.22.54-.21 5.89.13 10.68 5.03 10.68 10.92 0 .41-.33.75-.75.75zm-9.2-1.5h8.42c-.36-4.48-3.94-8.15-8.42-8.62z"
+                      fill="#000000"
+                      opacity="1"
+                      data-original="#000000"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <div class="hover-3d">
+            <div
+              class="bg-white rounded-lg p-[20px] w-[250px] shadow-[1px_1px_20px] shadow-[#bbb3a3]"
+            >
+              <p class="font-bold text-[#FFDBB6] mb-[20px] text-[20px]">
+                Reports & Analytics
+              </p>
+              <p
+                class="text-[#696969] text-[13px] ml-[15px] border-l-solid border-l-[#FFDBB6] border-l-[2px] pl-[10px] mb-[40px]"
+              >
+                Generate detailed reports to analyze student performance and
+                question effectiveness, supporting decision-making and improving
+                exam quality.
+              </p>
+              <div class="flex justify-end">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="100"
+                  height="100"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 512 512"
+                  style="enable-background: new 0 0 512 512"
+                  xml:space="preserve"
+                >
+                  <g>
+                    <circle
+                      cx="256"
+                      cy="267"
+                      r="245"
+                      style=""
+                      fill="#445EA0"
+                      data-original="#445ea0"
+                    ></circle>
+                    <path
+                      d="M100.718 421.644c-2.75 0-5-2.25-5-5V71.247H62.635c-2.75 0-5 2.25-5 5v334.546a246.426 246.426 0 0 0 47.084 48.935h276.398c2.75 0 5-2.25 5-5v-33.083l-285.399-.001z"
+                      style=""
+                      fill="#FFAF10"
+                      data-original="#ffaf10"
+                    ></path>
+                    <path
+                      d="M76.635 76.247c0-2.75 2.25-5 5-5h-19c-2.75 0-5 2.25-5 5v334.546a247.092 247.092 0 0 0 19 23.085V76.247z"
+                      style=""
+                      fill="#EF9614"
+                      data-original="#ef9614"
+                    ></path>
+                    <path
+                      d="M133.718 385.646c-2.75 0-5-2.25-5-5V35.998H97.883c-2.75 0-5 2.25-5 5v378.48c0 2.751 2.25 5 5 5h318.484c2.75 0 5-2.249 5-5v-33.832H133.718z"
+                      style=""
+                      fill="#FF9518"
+                      data-original="#ff9518"
+                    ></path>
+                    <path
+                      d="M110.883 419.478V40.998c0-2.75 2.25-5 5-5h-18c-2.75 0-5 2.25-5 5v378.48c0 2.751 2.25 5 5 5h18c-2.75 0-5-2.249-5-5z"
+                      style=""
+                      fill="#EF8318"
+                      data-original="#ef8318"
+                    ></path>
+                    <path
+                      d="M454.365 383.48c0 2.75-2.25 5-5 5H130.883c-2.75 0-5-2.25-5-5V5c0-2.75 2.25-5 5-5h318.482c2.75 0 5 2.25 5 5v378.48z"
+                      style=""
+                      fill="#D9EAFC"
+                      data-original="#d9eafc"
+                    ></path>
+                    <path
+                      d="M145.727 383.48V5c0-2.75 2.25-5 5-5h-19.845c-2.75 0-5 2.25-5 5v378.48c0 2.75 2.25 5 5 5h19.845c-2.75 0-5-2.25-5-5z"
+                      style=""
+                      fill="#C3DDF4"
+                      data-original="#c3ddf4"
+                    ></path>
+                    <path
+                      d="M415.09 50.794h-69.561a7.499 7.499 0 0 1-7.5-7.5 7.5 7.5 0 0 1 7.5-7.5h69.561a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5zM415.09 76.293h-69.561a7.5 7.5 0 0 1-7.5-7.5c0-4.143 3.357-7.5 7.5-7.5h69.561a7.5 7.5 0 0 1 0 15zM415.09 101.791h-69.561c-4.143 0-7.5-3.358-7.5-7.5s3.357-7.5 7.5-7.5h69.561a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5zM415.09 127.29h-69.561a7.5 7.5 0 0 1-7.5-7.5c0-4.143 3.357-7.5 7.5-7.5h69.561a7.5 7.5 0 0 1 0 15z"
+                      style=""
+                      fill="#DB722C"
+                      data-original="#db722c"
+                    ></path>
+                    <path
+                      d="M285.397 305.281H168.238c-4.143 0-7.5-3.358-7.5-7.5s3.357-7.5 7.5-7.5h117.158a7.5 7.5 0 0 1 7.5 7.5 7.499 7.499 0 0 1-7.499 7.5zM285.397 330.779H168.238a7.499 7.499 0 0 1-7.5-7.5 7.5 7.5 0 0 1 7.5-7.5h117.158a7.5 7.5 0 0 1 7.5 7.5 7.498 7.498 0 0 1-7.499 7.5zM285.397 356.278H168.238a7.499 7.499 0 0 1-7.5-7.5 7.5 7.5 0 0 1 7.5-7.5h117.158a7.5 7.5 0 0 1 7.5 7.5 7.499 7.499 0 0 1-7.499 7.5z"
+                      style=""
+                      fill="#52BBEF"
+                      data-original="#52bbef"
+                    ></path>
+                    <path
+                      d="M415.09 171.788H308.358c-4.143 0-7.5-3.358-7.5-7.5s3.357-7.5 7.5-7.5H415.09a7.5 7.5 0 0 1 0 15zM415.09 197.287H308.358c-4.143 0-7.5-3.358-7.5-7.5s3.357-7.5 7.5-7.5H415.09a7.5 7.5 0 0 1 0 15zM415.09 222.785H308.358a7.5 7.5 0 0 1 0-15H415.09a7.5 7.5 0 0 1 0 15zM415.09 248.283H308.358c-4.143 0-7.5-3.358-7.5-7.5s3.357-7.5 7.5-7.5H415.09a7.5 7.5 0 0 1 0 15zM154.77 215.755h29.242c0-16.15 13.091-29.243 29.241-29.243v-29.24c-32.297 0-58.483 26.183-58.483 58.483z"
+                      style=""
+                      fill="#FE3745"
+                      data-original="#fe3745"
+                    ></path>
+                    <path
+                      d="M228.084 142.442v29.241c16.15 0 29.241 13.091 29.241 29.241h29.243c0-32.3-26.185-58.482-58.484-58.482z"
+                      style=""
+                      fill="#91E0E8"
+                      data-original="#91e0e8"
+                    ></path>
+                    <path
+                      d="M242.494 215.755c0 16.148-13.09 29.241-29.24 29.241s-29.241-13.093-29.241-29.241H154.77c0 32.298 26.186 58.483 58.483 58.483 32.299 0 58.484-26.185 58.484-58.483h-29.243zM188.359 115.124V45.29c0-1.65-1.35-3-3-3h-18.182c-1.65 0-3 1.35-3 3v69.834h24.182z"
+                      style=""
+                      fill="#FFAF10"
+                      data-original="#ffaf10"
+                    ></path>
+                    <path
+                      d="M227.476 115.124V64.29c0-1.65-1.35-3-3-3h-18.181c-1.65 0-3 1.35-3 3v50.834h24.181z"
+                      style=""
+                      fill="#FE3745"
+                      data-original="#fe3745"
+                    ></path>
+                    <path
+                      d="M266.592 115.124V87.29c0-1.65-1.35-3-3-3h-18.181c-1.65 0-3 1.35-3 3v27.834h24.181z"
+                      style=""
+                      fill="#37C47A"
+                      data-original="#37c47a"
+                    ></path>
+                    <path
+                      d="M305.709 115.124V45.29c0-1.65-1.35-3-3-3h-18.182c-1.65 0-3 1.35-3 3v69.834h24.182z"
+                      style=""
+                      fill="#91E0E8"
+                      data-original="#91e0e8"
+                    ></path>
+                    <path
+                      d="M379.592 319.708c0-1.654 1.346-3 3-3h13.561v-33.56c0-2.75-2.25-5-5-5h-45.121c-2.75 0-5 2.25-5 5v45.121c0 2.75 2.25 5 5 5h33.56v-13.561z"
+                      style=""
+                      fill="#FE3745"
+                      data-original="#fe3745"
+                    ></path>
+                    <path
+                      d="M415.09 347.206c0 2.75-2.25 5-5 5h-27.498c-2.75 0-5-2.25-5-5v-27.498c0-2.75 2.25-5 5-5h27.498c2.75 0 5 2.25 5 5v27.498z"
+                      style=""
+                      fill="#37C47A"
+                      data-original="#37c47a"
+                    ></path>
+                    <path
+                      d="M310.879 127.29H159.008a7.5 7.5 0 0 1-7.5-7.5c0-4.143 3.357-7.5 7.5-7.5h151.871c4.143 0 7.5 3.357 7.5 7.5a7.5 7.5 0 0 1-7.5 7.5z"
+                      style=""
+                      fill="#52BBEF"
+                      data-original="#52bbef"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="flex m-[70px] mt-[100px] gap-[10px] flex-wrap sm:flex-nowrap justify-center opacity-0 translate-y-5"
+      >
+        <div class="flex flex-col items-end gap-[100px]">
+          <div
+            class="bg-[#F7A5A5] pt-[40px] pl-[10px] pr-[10px] rounded-xl -rotate-6 w-[150px]"
+          >
+            <img src="../images/girl.png" alt="img" class="" />
+          </div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="64"
+              height="64"
+              x="0"
+              y="0"
+              viewBox="0 0 512 512"
+              style="enable-background: new 0 0 512 512"
+              xml:space="preserve"
+              class=""
+            >
+              <g>
+                <path
+                  d="M484.7 224c-8.6-8.6-19.9-13.3-32-13.3-45.8 0-91 7.4-134.4 22.1l-20.2 6.8c-1.2.4-1.9-1.3-.8-1.8l19.2-9.5c41.1-20.3 78.3-47 110.7-79.4 8.5-8.5 13.2-19.6 13.3-31.4.3-24.8-19.9-45.5-44.7-45.9-12.3-.2-23.9 4.6-32.6 13.3-32.4 32.4-59.1 69.6-79.4 110.7l-9.5 19.2c-.6 1.1-2.2.4-1.8-.8l6.8-20.2c14.7-43.4 22.1-88.6 22.1-134.4 0-12.1-4.7-23.5-13.3-32-8.6-8.6-19.9-13.3-32-13.3-12.1 0-23.5 4.7-32 13.3-8.6 8.6-13.3 19.9-13.3 32 0 45.8 7.4 91 22.1 134.4l6.8 20.2c.4 1.2-1.3 1.9-1.8.8l-9.5-19.2c-20.3-41.1-47-78.3-79.4-110.7l-1.4 1.4 1.4-1.4c-8.5-8.5-19.6-13.2-31.4-13.3-24.9-.3-45.6 19.9-45.9 44.7-.2 12.3 4.6 23.9 13.3 32.6 32.4 32.4 69.6 59.1 110.7 79.4l19.2 9.5c1.1.6.4 2.2-.8 1.8l-20.2-6.8c-43.4-14.7-88.6-22.1-134.4-22.1-12.1 0-23.5 4.7-32 13.3-17.7 17.7-17.7 46.4 0 64.1 8.6 8.6 19.9 13.3 32 13.3 45.8 0 91-7.4 134.4-22.1l20.2-6.8c1.2-.4 1.9 1.3.8 1.8l-19.2 9.5c-41.1 20.3-78.3 47-110.7 79.4-8.5 8.5-13.2 19.6-13.3 31.4-.3 24.8 19.9 45.5 44.7 45.9 12.3.2 23.9-4.6 32.6-13.3 32.4-32.4 59.1-69.6 79.4-110.7l9.5-19.2c.6-1.1 2.2-.4 1.8.8l-6.8 20.2c-14.7 43.4-22.1 88.6-22.1 134.4 0 12.1 4.7 23.5 13.3 32 8.6 8.6 19.9 13.3 32 13.3 12.1 0 23.5-4.7 32-13.3 8.6-8.6 13.3-19.9 13.3-32 0-45.8-7.4-91-22.1-134.4l-6.8-20.2c-.4-1.2 1.3-1.9 1.8-.8l9.5 19.2c20.3 41.1 47 78.3 79.4 110.7l1.4-1.4-1.4 1.4c8.5 8.5 19.6 13.2 31.4 13.3 24.8.3 45.5-19.9 45.9-44.7.2-12.3-4.6-23.9-13.3-32.6-32.4-32.4-69.6-59.1-110.7-79.4l-19.2-9.5c-1.1-.6-.4-2.2.8-1.8l20.2 6.8c43.4 14.7 88.6 22.1 134.4 22.1 12.1 0 23.5-4.7 32-13.3 17.7-17.7 17.7-46.5 0-64.1z"
+                  fill="#B7E5CD"
+                  opacity="1"
+                  data-original="#000000"
+                  class=""
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="flex justify-center flex-col items-center">
+          <p
+            class="text-center p-[10px] pl-[30px] pr-[30px] rounded-full bg-[#f7a5a54d] text-[#F7A5A5] w-fit mb-[30px]"
+          >
+            About Us
+          </p>
+          <p
+            class="text-[50px] text-center capitalize dark:text-[#FFF2EF] text-[#091228] leading-tight mb-[30px]"
+          >
+            <span class="text-[#f8c899]">gerway</span> to personal<br />
+            and professional <span class="text-[#f8c899]">growth</span>
+          </p>
+          <p class="text-center pl-[40px] pr-[40px] text-[#696969] dark:text-[#cccbcb]">
+            We are a team of passionate educators and developers dedicated to
+            revolutionizing the way exams are created and conducted. Our mission
+            is to provide a comprehensive platform that empowers educators to
+            create high-quality exams efficiently while ensuring academic
+            integrity and enhancing the learning experience for students.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-start gap-[100px]">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="64"
+              height="64"
+              x="0"
+              y="0"
+              viewBox="0 0 489.676 489.676"
+              style="enable-background: new 0 0 512 512"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  d="M17.346 125.063h90.378c9.579 0 17.342-7.759 17.342-17.34V17.344c0-9.578-7.763-17.342-17.342-17.342H17.346C7.762.002 0 7.766 0 17.344v90.379c0 9.581 7.762 17.34 17.346 17.34zM260.427 125.063h90.378c9.566 0 17.341-7.759 17.341-17.34V17.344c0-9.578-7.775-17.342-17.341-17.342h-90.378c-9.597 0-17.341 7.764-17.341 17.342v90.379c-.001 9.581 7.744 17.34 17.341 17.34zM121.525 229.263c0 9.583 7.78 17.345 17.346 17.345h90.379c9.597 0 17.341-7.762 17.341-17.345v-90.378c0-9.58-7.744-17.344-17.341-17.344h-90.379c-9.565 0-17.346 7.764-17.346 17.344v90.378zM472.33 121.542h-90.378c-9.579 0-17.342 7.764-17.342 17.344v90.378c0 9.583 7.763 17.345 17.342 17.345h90.378c9.584 0 17.346-7.762 17.346-17.345v-90.378c0-9.581-7.762-17.344-17.346-17.344zM125.066 260.413c0-9.582-7.763-17.344-17.342-17.344H17.346C7.762 243.069 0 250.831 0 260.413v90.378c0 9.58 7.762 17.343 17.346 17.343h90.378c9.579 0 17.342-7.763 17.342-17.343v-90.378zM368.146 260.413c0-9.582-7.775-17.344-17.341-17.344h-90.378c-9.597 0-17.341 7.762-17.341 17.344v90.378c0 9.58 7.745 17.343 17.341 17.343h90.378c9.566 0 17.341-7.763 17.341-17.343v-90.378zM229.249 364.609H138.87c-9.565 0-17.346 7.763-17.346 17.348v90.378c0 9.576 7.78 17.339 17.346 17.339h90.379c9.597 0 17.341-7.763 17.341-17.339v-90.378c0-9.585-7.743-17.348-17.341-17.348zM472.33 364.609h-90.378c-9.579 0-17.342 7.763-17.342 17.348v90.378c0 9.576 7.763 17.339 17.342 17.339h90.378c9.584 0 17.346-7.763 17.346-17.339v-90.378c0-9.585-7.762-17.348-17.346-17.348z"
+                  fill="#F7A5A5"
+                  opacity="1"
+                  data-original="#000000"
+                ></path>
+              </g>
+            </svg>
+          </div>
+          <div
+            class="bg-[#B7E5CD] pt-[40px] pl-[10px] pr-[10px] rounded-xl rotate-6 w-[150px]"
+          >
+            <img src="../images/boy.png" alt="img" class="" />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="values"
+        class="flex justify-center flex-col items-center w-fit m-[70px] ml-auto mr-auto mt-[100px] bg-white p-[50px] rounded-xl opacity-0 translate-y-10"
+      >
+        <p
+          class="text-center p-[10px] pl-[30px] pr-[30px] rounded-full bg-[#f7a5a54d] text-[#F7A5A5] w-fit mb-[30px]"
+        >
+          our values
+        </p>
+        <p
+          class="text-[50px] text-center capitalize text-[#091228] leading-tight mb-[30px]"
+        >
+          your <span class="text-[#f8c899]">exam journey</span> <br />in four
+          simple steps
+        </p>
+
+        <div
+          class="flex justify-center text-center gap-[50px] flex-wrap mt-[30px] "
+        >
+          <div class="flex flex-col items-center">
+            <div class="bg-[#fdefe0] p-5 rounded-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="36"
+                height="36"
+                x="0"
+                y="0"
+                viewBox="0 0 510 510"
+                style="enable-background: new 0 0 512 512"
+                xml:space="preserve"
+                fill-rule="evenodd"
+              >
+                <g>
+                  <path
+                    d="M255.024 422.895c-92.476 0-167.919-75.395-167.919-167.871 0-92.475 75.444-167.919 167.919-167.919 92.476 0 167.871 75.443 167.871 167.919 0 92.477-75.394 167.871-167.871 167.871zm0-16c83.662 0 151.871-68.209 151.871-151.871 0-83.663-68.208-151.919-151.871-151.919-83.664 0-151.919 68.255-151.919 151.919 0 83.663 68.256 151.871 151.919 151.871zm-21.021-149.14 72.06-72.813.015-.014c12.318-12.382 32.423-12.443 44.805-.125 12.378 12.314 12.453 32.349.139 44.79l-.004.004c-31.544 31.83-62.849 63.851-94.536 95.538-12.377 12.377-32.475 12.377-44.852 0l-52.527-52.575c-12.374-12.373-12.388-32.401-.015-44.838l.015-.015c12.377-12.377 32.475-12.377 44.852 0zm-5.628 17-35.733-35.734c-6.131-6.131-16.084-6.133-22.218-.007-6.13 6.169-6.142 16.097-.007 22.232l52.527 52.575c6.133 6.133 16.091 6.133 22.225 0 31.668-31.669 62.956-63.671 94.481-95.483 6.101-6.165 6.081-16.091-.052-22.192-6.127-6.096-16.075-6.063-22.173.062l-77.707 78.517a8.001 8.001 0 0 1-11.343.03zm229.747 14.13c.722-4.356 4.845-7.305 9.201-6.583s7.306 4.845 6.583 9.201c-15.463 93.25-89.153 166.94-182.403 182.403-4.356.723-8.479-2.227-9.201-6.583s2.227-8.479 6.583-9.201c86.519-14.347 154.89-82.718 169.237-169.237zM221.115 458.122c4.356.722 7.305 4.845 6.583 9.201s-4.845 7.306-9.201 6.583c-93.25-15.463-166.94-89.153-182.403-182.403-.723-4.356 2.227-8.479 6.583-9.201s8.479 2.227 9.201 6.583c14.347 86.519 82.718 154.89 169.237 169.237zM51.878 221.115c-.722 4.356-4.845 7.305-9.201 6.583s-7.306-4.845-6.583-9.201c15.463-93.25 89.153-166.94 182.403-182.403 4.356-.723 8.479 2.227 9.201 6.583s-2.227 8.479-6.583 9.201c-86.519 14.347-154.89 82.718-169.237 169.237zM288.885 51.878c-4.356-.722-7.305-4.845-6.583-9.201s4.845-7.306 9.201-6.583c93.25 15.463 166.94 89.153 182.403 182.403.723 4.356-2.227 8.479-6.583 9.201s-8.479-2.227-9.201-6.583c-14.347-86.519-82.718-154.89-169.237-169.237zM263 67.198c0 4.415-3.585 8-8 8s-8-3.585-8-8V15c0-4.415 3.585-8 8-8s8 3.585 8 8zM442.802 263c-4.415 0-8-3.585-8-8s3.585-8 8-8H495c4.415 0 8 3.585 8 8s-3.585 8-8 8zM247 442.802c0-4.415 3.585-8 8-8s8 3.585 8 8V495c0 4.415-3.585 8-8 8s-8-3.585-8-8zM67.198 247c4.415 0 8 3.585 8 8s-3.585 8-8 8H15c-4.415 0-8-3.585-8-8s3.585-8 8-8z"
+                    fill="#f8c899"
+                    opacity="1"
+                    data-original="#000000"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+
+            <p class="text-[#091228] text-[20px] font-bold">Accuracy</p>
+            <p class="text-[11px] text-[#696969] w-[200px]">
+              We ensure precise grading and reliable results to maintain
+              fairness for every student.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <div class="bg-[#fdefe0] p-5 rounded-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="36"
+                height="36"
+                x="0"
+                y="0"
+                viewBox="0 0 512 512"
+                style="enable-background: new 0 0 512 512"
+                xml:space="preserve"
+              >
+                <g>
+                  <path
+                    d="M90.742 180.734c-5.52 0-10 4.477-10 9.996s4.48 10 10 10 10-4.48 10-10-4.48-9.996-10-9.996zm0 0"
+                    fill="#f8c899"
+                    opacity="1"
+                    data-original="#000000"
+                  ></path>
+                  <path
+                    d="M370.922 300.219a9.993 9.993 0 0 0-7.07-2.93c-.102.02-3.946-.195-7.07 2.93l-7.067 7.066-22.977-22.973c50.703-71.074 42.992-169.117-19.449-231.554-70.336-70.336-184.187-70.348-254.531 0-70.336 70.332-70.348 184.187 0 254.531 62.285 62.29 160.289 70.281 231.55 19.45l22.977 22.976-7.066 7.066c-3.903 3.903-3.906 10.239 0 14.145l126.422 126.41c19.535 19.547 51.156 19.559 70.695.004 19.547-19.531 19.555-51.156 0-70.695zm-49.496 35.355-21.41-21.41c2.488-2.23 4.921-4.52 7.273-6.875a183.311 183.311 0 0 0 6.875-7.27l21.41 21.41zM66.898 293.148c-62.523-62.52-62.53-163.722 0-226.25 62.52-62.523 163.723-62.53 226.25 0 62.383 62.38 62.7 163.559 0 226.25-63.406 63.414-164.582 61.672-226.25 0zm296.954 28.282 28.277 28.28-42.418 42.419-28.281-28.277zM483.195 483.2c-11.718 11.73-30.683 11.734-42.41 0l-76.933-76.93 42.418-42.418 76.93 76.937c11.726 11.715 11.738 30.68-.005 42.41zm0 0"
+                    fill="#f8c899"
+                    opacity="1"
+                    data-original="#000000"
+                  ></path>
+                  <path
+                    d="M279.012 81.043c-54.684-54.684-143.274-54.715-197.98-.008-54.571 54.582-54.571 143.395 0 197.98 54.714 54.712 143.253 54.715 197.972 0 54.582-54.585 54.586-143.394.008-197.972zm-14.149 183.828c-46.894 46.895-122.785 46.906-169.691.004-46.774-46.79-46.774-122.914 0-169.703 46.871-46.867 122.812-46.879 169.7.012 46.78 46.78 46.776 122.902-.009 169.687zm0 0"
+                    fill="#f8c899"
+                    opacity="1"
+                    data-original="#000000"
+                  ></path>
+                  <path
+                    d="M180.023 80.043c-26.726 0-51.835 10.398-70.703 29.277-10.937 10.938-18.988 23.86-23.925 38.414-1.774 5.227 1.023 10.907 6.253 12.68 5.239 1.777 10.91-1.035 12.684-6.254 3.941-11.62 10.379-21.95 19.129-30.703 15.094-15.098 35.18-23.414 56.562-23.414 5.524 0 10-4.477 10-10s-4.476-10-10-10zm0 0"
+                    fill="#f8c899"
+                    opacity="1"
+                    data-original="#000000"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+
+            <p class="text-[#091228] text-[20px] font-bold">Transparency</p>
+            <p class="text-[11px] text-[#696969] w-[200px]">
+              Clear exam processes and detailed reports build trust between
+              students and educators.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <div class="bg-[#fdefe0] p-5 rounded-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="36"
+                height="36"
+                x="0"
+                y="0"
+                viewBox="0 0 682.667 682.667"
+                style="enable-background: new 0 0 512 512"
+                xml:space="preserve"
+              >
+                <g>
+                  <defs>
+                    <clipPath id="a" clipPathUnits="userSpaceOnUse">
+                      <path
+                        d="M0 512h512V0H0Z"
+                        fill="#f8c899"
+                        opacity="1"
+                        data-original="#000000"
+                      ></path>
+                    </clipPath>
+                  </defs>
+                  <g
+                    clip-path="url(#a)"
+                    transform="matrix(1.33333 0 0 -1.33333 0 682.667)"
+                  >
+                    <path
+                      d="M0 0h32.635v-45.96c0-13.662-11.075-24.737-24.737-24.737h-85.493c-13.661 0-24.737 11.075-24.737 24.737V0H-30"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(290.852 110.095)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="M0 0c5.739-18.652 23.104-32.211 43.639-32.211 20.535 0 37.9 13.559 43.639 32.211z"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(212.364 39.398)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="M0 0c-22.702 0-41.106 18.404-41.106 41.106S-22.702 82.212 0 82.212s41.106-18.404 41.106-41.106S22.702 0 0 0Zm102.26 25.746v30.72l-25.13 3.567a78.898 78.898 0 0 1-9.208 22.229l15.247 20.292-21.721 21.721-20.292-15.247a78.924 78.924 0 0 1-22.23 9.209l-3.566 25.129h-30.72l-3.567-25.129a78.93 78.93 0 0 1-22.229-9.209l-20.292 15.247-21.722-21.721 15.247-20.292a78.957 78.957 0 0 1-9.208-22.229l-25.129-3.567v-30.72l25.129-3.567A78.957 78.957 0 0 1-67.923-.05L-83.17-20.342l21.722-21.721 20.292 15.247a78.93 78.93 0 0 1 22.229-9.209l3.567-25.129h30.72l3.566 25.129a78.924 78.924 0 0 1 22.23 9.209l20.292-15.247 21.721 21.721L67.922-.05a78.93 78.93 0 0 1 9.209 22.229z"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(256.003 222.37)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="M0 0v43.988"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(256 460.825)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="M0 0h43.989"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(436.499 280.325)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="M0 0h43.989"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(31.512 280.325)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="m0 0 31.105-31.104"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(97.263 439.063)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="m0 0 15.202-5.955"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(72.737 352.124)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="m0 0-6.129 15.646"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(190.157 448.387)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="m0 0 6.13 15.646"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(321.843 448.387)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="m0 0-31.104-31.104"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(414.737 439.063)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="m0 0-15.202-5.955"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(439.264 352.124)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="M0 0c-28.82-27.893-46.859-66.882-46.859-109.778.001-51.887 25.824-97.738 65.317-125.414 12.712-8.91 20.258-23.477 20.258-39v-.004h72.331"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(149.804 384.291)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="M0 0h32.636c0 15.656 7.763 30.202 20.563 39.219 39.321 27.7 65.01 73.448 65.01 125.201 0 84.096-67.82 152.351-151.75 153.053-30.828.257-59.72-8.816-83.98-24.549"
+                      style="
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: none;
+                        stroke-opacity: 1;
+                      "
+                      transform="translate(290.852 110.095)"
+                      fill="none"
+                      stroke="#f8c899"
+                      stroke-width="15px"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                      stroke-dasharray="none"
+                      stroke-opacity=""
+                      data-original="#000000"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <p class="text-[#091228] text-[20px] font-bold">Innovation</p>
+            <p class="text-[11px] text-[#696969] w-[200px]">
+              We use smart technology to simplify exam management and improve
+              learning experiences.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <div class="bg-[#fdefe0] p-5 rounded-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="36"
+                height="36"
+                x="0"
+                y="0"
+                viewBox="0 0 64 64"
+                style="enable-background: new 0 0 512 512"
+                xml:space="preserve"
+                class=""
+              >
+                <g>
+                  <path
+                    d="M7.295 37.412c1.043-.13 1.069 1.128 1.32 1.83a1.002 1.002 0 0 0 1.248.664c1.023-.344.656-1.353.417-2.122a2.928 2.928 0 0 0-3.231-2.357.944.944 0 0 1-1.05-.918V29.49a.93.93 0 0 1 1.05-.918 2.913 2.913 0 0 0 3.18-2.163 22.187 22.187 0 0 1 2.422-5.85 2.938 2.938 0 0 0-.71-3.783.921.921 0 0 1-.104-1.389l3.55-3.55a.918.918 0 0 1 1.388.104 2.939 2.939 0 0 0 3.786.709 22.19 22.19 0 0 1 5.838-2.42 2.898 2.898 0 0 0 2.172-3.18A.928.928 0 0 1 29.49 6h5.02a.929.929 0 0 1 .918 1.05 2.89 2.89 0 0 0 2.16 3.178 22.352 22.352 0 0 1 5.437 2.182 1 1 0 1 0 .988-1.739A24.326 24.326 0 0 0 38.08 8.29a.904.904 0 0 1-.669-.99A2.925 2.925 0 0 0 34.509 4h-5.02a2.925 2.925 0 0 0-2.902 3.295.914.914 0 0 1-.677.997 24.255 24.255 0 0 0-6.37 2.637.917.917 0 0 1-1.146-.17 2.944 2.944 0 0 0-4.422-.336l-3.55 3.55a2.922 2.922 0 0 0 .336 4.42.915.915 0 0 1 .172 1.145A24.26 24.26 0 0 0 8.29 25.92a.904.904 0 0 1-.99.669A2.925 2.925 0 0 0 4 29.49v5.02a2.93 2.93 0 0 0 3.295 2.902ZM56.703 26.588a.965.965 0 0 1-1.054-.894c-.16-.788-.482-1.908-1.514-1.6-1.095.36-.588 1.508-.367 2.305a2.905 2.905 0 0 0 3.181 2.173.945.945 0 0 1 1.05.918v5.02a.93.93 0 0 1-1.05.917 2.912 2.912 0 0 0-3.18 2.163 22.187 22.187 0 0 1-2.422 5.85 2.938 2.938 0 0 0 .711 3.784.921.921 0 0 1 .104 1.388l-3.55 3.55a.917.917 0 0 1-1.389-.103 2.941 2.941 0 0 0-3.786-.71 22.19 22.19 0 0 1-5.837 2.42 2.915 2.915 0 0 0-2.16 3.31.937.937 0 0 1-.931.92h-5.02c-.752.003-1.042-.762-.89-1.41a2.893 2.893 0 0 0-2.19-2.818 22.187 22.187 0 0 1-5.851-2.423 2.938 2.938 0 0 0-3.783.71.918.918 0 0 1-1.389.104l-.58-.58a1 1 0 1 0-1.414 1.414l.58.58a2.945 2.945 0 0 0 4.421-.335.912.912 0 0 1 1.145-.173 24.26 24.26 0 0 0 6.381 2.642.904.904 0 0 1 .67.99 2.943 2.943 0 0 0 2.9 3.299h5.02a2.928 2.928 0 0 0 2.93-2.92c-.099-.555.012-1.224.649-1.371a24.256 24.256 0 0 0 6.37-2.638.914.914 0 0 1 1.146.17 2.946 2.946 0 0 0 4.422.336l3.55-3.55a2.942 2.942 0 0 0-.335-4.42.915.915 0 0 1-.173-1.145 24.26 24.26 0 0 0 2.641-6.381.904.904 0 0 1 .99-.67 2.925 2.925 0 0 0 3.3-2.9v-5.02a2.928 2.928 0 0 0-3.296-2.902Z"
+                    fill="#f8c899"
+                    opacity="1"
+                    data-original="#000000"
+                    class=""
+                  ></path>
+                  <path
+                    d="M45.64 32.783c-.457 10.882-13.727 16.838-22.126 9.925a1 1 0 0 0-1.25 1.563c9.752 7.9 24.78 1.167 25.374-11.432a1 1 0 0 0-1.998-.056ZM16.362 31.114a1 1 0 0 0 1.996.111c.442-10.887 13.724-16.849 22.126-9.934a1 1 0 0 0 1.25-1.562c-9.735-7.9-24.794-1.16-25.372 11.385Z"
+                    fill="#f8c899"
+                    opacity="1"
+                    data-original="#000000"
+                    class=""
+                  ></path>
+                  <path
+                    d="M35.383 38.434a1.006 1.006 0 0 0 1.414 0l18.929-18.929 1.747 1.748a1.007 1.007 0 0 0 1.703-.616l.818-9a1.008 1.008 0 0 0-1.087-1.087l-9 .818a1 1 0 0 0-.616 1.703l1.747 1.748L36.09 29.767l-5.838-5.837a1 1 0 0 0-1.414 0L4.293 48.474a1.006 1.006 0 0 0 0 1.414l3.272 3.272a1 1 0 0 0 1.414 0l20.566-20.565ZM8.273 51.04l-1.859-1.858 23.131-23.13 5.838 5.837a1 1 0 0 0 1.414 0L53.16 15.526a1 1 0 0 0 0-1.414l-.945-.946 5.679-.515-.517 5.677c-.628-.584-1.422-1.816-2.358-.944l-18.93 18.929-5.837-5.839a1 1 0 0 0-1.414 0Z"
+                    fill="#f8c899"
+                    opacity="1"
+                    data-original="#000000"
+                    class=""
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <p class="text-[#091228] text-[20px] font-bold">Efficiency</p>
+            <p class="text-[11px] text-[#696969] w-[200px]">
+              Our system saves time and effort by automating exams, grading, and
+              performance tracking.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cards bg-[#FFDBB6] rounded-2xl p-[40px] m-[50px] opacity-0 translate-y-10 text-[#091228] overflow-hidden">
+        
+          <div class="header flex justify-between relative">
+          <p class="text-[40px] font-semibold mb-[30px] ml-[40px] capitalize">
+            <span class="text-[#F7A5A5]">proof</span> in every<span class="text-[#F7A5A5]"> story</span>
+          </p>
+          <svg
+            class="absolute top-[-50px] right-[-50px]"
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="200"
+            height="200"
+            x="0"
+            y="0"
+            viewBox="0 0 511.988 511.988"
+            style="enable-background: new 0 0 512 512"
+            xml:space="preserve"
+            class=""
+          >
+            <g>
+              <path
+                d="M155.931 511.57c-46.853.004-88.404-34.729-104.115-77.628-16.002-43.694-1.489-89.444 34.636-118.075L269.2 170.955c38.712-30.68 42.438-82.661 12.281-120.821C251.4 12.068 199.729 3.141 160.932 33.887 125.126 62.323 85.5 104.668 36.273 77.249 10.844 63.084-2.862 36.306.503 7.364c1.086-9.321 16.034-8.015 14.9 1.732-2.652 22.8 8.142 43.893 28.17 55.048 41.665 23.208 78.005-18.157 108.037-42.008 45.184-35.812 106.394-25.785 141.628 18.681 35.426 44.708 30.38 106.149-14.719 141.892L95.771 327.621c-40.354 31.981-45.958 85.931-15.97 127.224 31.807 43.798 89.496 54.703 132.657 20.498l134.574-106.655c32.851-26.035 76.003-29.541 112.612-9.149 36.697 20.44 56.476 59.083 51.618 100.849-1.084 9.323-16.034 8.014-14.9-1.732 4.144-35.624-12.723-68.582-44.017-86.013-31.208-17.382-67.991-14.395-95.997 7.801L221.774 487.099c-20.451 16.209-43.019 24.47-65.843 24.471z"
+                fill="#091228"
+                opacity="1"
+                data-original="#000000"
+              ></path>
+            </g>
+          </svg>
+        </div>
+
+
+        <div>
+
+          <div class="bg-white p-[50px] rounded-xl">
+            <div class="flex justify-center gap-2">
+              <img src="../images/star.png" alt="rating" class="w-[24px]"/>
+              <img src="../images/star.png" alt="rating" class="w-[24px]"/>
+              <img src="../images/star.png" alt="rating" class="w-[24px]"/>
+              <img src="../images/star.png" alt="rating" class="w-[24px]"/>
+              <img src="../images/star.png" alt="rating" class="w-[24px]"/>
+            </div>
+
+            <div>
+                  <div id="posts" class="mt-[20px]">
+
+                  </div>              
+            <div>
+              <div class="flex justify-center items-center gap-16 mt-[20px]">
+                <button id="pre" class="w-[50px] h-[50px] border-solid border-[1px] border-[#091228] text-[#091228] rounded-full active:scale-95"><</button>
+              <div class="profile flex flex-col items-center gap-2">
+                <img src="" alt="profile" class="w-[50px] h-[50px] rounded-full" id="img">
+                <p id="name"></p>
+              </div>
+              <button id="next" class="w-[50px] h-[50px] bg-[#091228] text-white rounded-full active:scale-95">></button>
+              </div>
+
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+<footer class="bg-[#091228] text-center text-white p-2">
+  <p>&copy; 2026 Esraa Hamada & MennaAllah Essam. All rights reserved.</p>
+</footer>
+    <div
+      id="cursor-shadow"
+      class="fixed w-[100px] h-[100px] dark:bg-[#f7a5a557] bg-[#f7a5a5aa] rounded-full pointer-events-none blur-[50px] -translate-x-1/2 -translate-y-1/2 transition-all duration-75 z-[9999]"
+    ></div>
+
+    <script src="../JS/script.js"></script>
+    <script>
+      let counterCounter = document.getElementById("country");
+      let count = 60;
+      let interval = setInterval(() => {
+        count++;
+        let content = count + "+";
+        counterCounter.innerHTML = content;
+
+        if (count >= 120) {
+          clearInterval(interval);
+        }
+      }, 50);
+
+      let studentCounter = document.getElementById("student");
+      let studentCount = 540;
+      let studentInterval = setInterval(() => {
+        studentCount++;
+        let studentContent = studentCount + "+";
+        studentCounter.innerHTML = studentContent;
+
+        if (studentCount >= 600) {
+          clearInterval(studentInterval);
+        }
+      }, 50);
+
+      const shadow = document.getElementById("cursor-shadow");
+
+      document.addEventListener("mousemove", (e) => {
+        shadow.style.left = e.clientX + "px";
+        shadow.style.top = e.clientY + "px";
+      });
+
+      ////////////////////////////////////////////////////////////////////
+      let posts = [
+        {
+          post: "Eduvance provides an exceptional online learning experience. The platform is user-friendly, with well-structured courses that make learning engaging and effective. The support team is responsive and always ready to help, ensuring that users have a smooth and productive experience. I highly recommend Eduvance to anyone looking to enhance their skills and knowledge online.",
+          name: "John Doe",
+          rating: 5,
+          src:"../images/pexels-moose-photos-170195-1587009.jpg"
+        },
+        {
+          post: "Eduvance has transformed the way I learn online. The courses are comprehensive and easy to follow, making it a great resource for anyone looking to expand their knowledge. The platform is intuitive, and the support team is always available to assist with any questions or issues. I am extremely satisfied with my experience on Eduvance and would recommend it to others.",
+          name: "Jane Smith",
+          rating: 4,
+          src: "../images/pexels-429124762-19881456.jpg"
+        },
+      ];
+     let counter = 0;
+     let div = document.getElementById("posts");
+     let next = document.getElementById("next");
+     let pre = document.getElementById("pre");
+     let name = document.getElementById("name");
+     let img = document.getElementById("img");
+     img.src = posts[0].src;
+     name.innerHTML = posts[0].name;
+      div.innerHTML = `
+        <p class ="text-center"> ${posts[0].post} </p>
+        `;
+     function nextPost() {
+      if (counter < posts.length -1) {
+        counter++;
+        div.innerHTML = `
+        <p class ="text-center"> ${posts[counter].post} </p>
+        `;
+        name.innerHTML = posts[counter].name;
+        img.src = posts[counter].src;
+      }
+      if(counter >0) {
+      pre.classList.add("bg-[#091228]");
+      pre.classList.add("text-white");
+     }
+     }
+
+     function prePost() {
+      if (counter > 0) {
+        counter--;
+        div.innerHTML = `
+        <p class ="text-center"> ${posts[counter].post} </p>
+        `
+        name.innerHTML = posts[counter].name;
+        img.src = posts[counter].src;
+      }
+      if(counter == 0) {
+        pre.classList.remove("bg-[#091228]");
+        pre.classList.remove("text-white");
+      }
+     }
+     
+     
+     next.addEventListener("click", nextPost);
+     pre.addEventListener("click", prePost);
+
+
+
+     const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animate-fade-in");
+      observer.unobserve(entry.target); 
+    }
+  });
+}, { threshold: 0.1 }); 
+
+sections.forEach(section => observer.observe(section));
+
+
+/////// DARK MODE
+function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+
+const toggle = document.getElementById("themeToggle");
+
+// لما المستخدم يضغط
+toggle.addEventListener("change", function () {
+  document.documentElement.classList.toggle("dark");
+
+  if (document.documentElement.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+});
+
+// أول ما الصفحة تفتح
+window.addEventListener("DOMContentLoaded", function () {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+    toggle.checked = true;
+  }
+});
+    </script>
+  </body>
+</html>

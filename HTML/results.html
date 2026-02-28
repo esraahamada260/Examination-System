@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="selection:bg-[#FFDBB6] selection:text-[#091228]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+
+       <link rel="icon" href="../images/puzzle.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" /> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <style>
+.progress-circle::before {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  background: white;
+  border-radius: 50%;
+}
+
+</style>
+
+</head>
+
+
+<body class="bg-[#FFF2EF] flex items-center justify-center m-[50px]">
+
+  <div class="wrapper bg-white rounded-3xl shadow-xl p-[50px] flex flex-col items-center justify-center gap-4 w-[50%]">
+    <p id="name" class="border-solid border-[#FFDBB6] border-[1px] rounded-3xl p-[10px] font-bold font-[Poppins] capitalize text-[#091228] w-[100%] text-center"></p>
+    <div>
+          <p id="" class=" rounded-3xl p-[10px] font-bold font-[Poppins] capitalize text-[#091228] w-[100%] text-center">exam completed!</p>
+          <p id="scoreDisplay" class=" rounded-3xl p-[10px] font-bold font-[Poppins] capitalize text-[#091228] w-[100%] text-center"></p>
+    </div>
+    <div class="progress-circle w-[150px] h-[150px] rounded-full flex justify-center font-[Poppins] items-center relative bg-[conic-gradient(#22c55e_0deg,_#e5e7eb_0deg)]">
+      <span id="percent" class="z-50 font-bold text-[24px]">0%</span>
+    </div>
+    <div id="name" class="border-solid border-[#FFDBB6] border-[1px] rounded-3xl p-[10px] font-bold font-[Poppins] capitalize text-[#091228] w-[100%] text-center">
+      <p class="text-[#f4b270] text-[25px]">good job! &#128077;</p>
+      <p id="message"></p>
+    </div>
+    <button class="btn btn-ghost bg-[#091228] text-white font-bold capitalize p-[10px] rounded-full pl-[20px] pr-[20px] hover:bg-[#F7A5A5] hover:shadow-lg hover:shadow-[#F7A5A5]" onclick="goToReview()">review answers</button>
+</div>
+
+
+
+
+ <script>
+
+const storedUser = localStorage.getItem("currentUser");
+if (!storedUser) {
+    window.location.replace("firstPage.html");
+}
+let progress = 0;
+let circle = document.querySelector(".progress-circle");
+let percent = document.getElementById("percent");
+let message = document.getElementById("message");
+
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+if(currentUser) {
+    document.getElementById("name").innerHTML = `${currentUser.firstName} ${currentUser.lastName} &#128075`;
+    document.getElementById("scoreDisplay").innerText = `your score is: ${currentUser.score}/10`;
+}
+let percentage = Math.round((currentUser.score / 10) * 100);
+let interval = setInterval(() => {
+  progress++;
+  if (progress > percentage) {
+    clearInterval(interval);
+    progress = percentage;
+  }
+  
+  if(progress < 40) {
+    circle.style.background =
+    `conic-gradient(#FF0000 ${progress * 3.6}deg, #e5e7eb 0deg)`;
+  }
+  else if(progress < 70){
+    circle.style.background =
+    `conic-gradient(#FFC300 ${progress * 3.6}deg, #e5e7eb 0deg)`;
+  }
+  else {
+    circle.style.background =
+    `conic-gradient(#48A111 ${progress * 3.6}deg, #e5e7eb 0deg)`;
+  }
+  
+  percent.innerText = progress + "%";
+
+  if(percentage < 40) {
+    message.innerHTML = "You need to improve! Keep practicing. &#128549;";
+  }
+
+  if(percentage < 70) {
+    message.innerHTML = "Not bad! Keep practicing to improve your score. &#128522;";
+  }
+
+  if(percentage >= 70) {
+    message.innerHTML = "Great job! You passed! &#128525;";
+  } 
+
+}, 50);
+
+function goToReview() {
+    window.location.replace("review.html");
+}
+
+</script>
+
+</body>
+</html>

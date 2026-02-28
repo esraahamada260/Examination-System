@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+  --navy: #091228;
+  --peach: #F7A5A5;
+  --yellow: #FFDBB6;
+  --background: #FFF2EF;
+  --gray: #c1c1c1ee;
+  --lightGreen: #B7E5CD;
+  --baige: #fbecdc;
+
+
+  --navyLowOpacity: #0912287e;
+  --yellowLowOpacity: #ffdbb656;
+  --peachLowOpacity: #f7a5a55a;
+  --greenLowOpacity: #b7e5cd4b;
+}
+
+body {
+    background-color: var(--background);
+    font-family: "Poppins";
+    position: relative;
+}
+
+::selection {
+    background: var(--yellow);
+    color: var(--navy);
+}
+
+main {
+    margin: 35px auto;
+    display: flex;
+    width: fit-content;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+}
+
+main .log-in,
+main .sign-up {
+    background-color: white;
+    border-radius: 10px;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+main .log-in p:nth-child(1),
+main .sign-up p:nth-child(1) {
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 50px;
+    color: var(--navy);
+}
+
+main .log-in div:nth-child(2),
+main .sign-up div:nth-child(2) {
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+}
+main .log-in div:nth-child(2) button,
+main .sign-up div:nth-child(2) button {
+    border-radius: 50px;
+    background-color: white;
+    padding: 10px;
+    border: solid 1px var(--navy);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--yellowLowOpacity);
+    border: none;
+}
+
+main .log-in div:nth-child(2) button img,
+main .sign-up div:nth-child(2) button img {
+    width: 24px;
+}
+
+main .log-in div:nth-child(2) button:hover,
+main .sign-up div:nth-child(2) button:hover {
+    background-color: var(--peachLowOpacity);
+    border: none;
+}
+
+
+
+
+main .log-in p:nth-child(3),
+main .sign-up p:nth-child(3) {
+    font-size: 12px;
+    color: var(--navy);
+}
+
+main .log-in form,
+main .sign-up form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+main .log-in form input,
+main .sign-up form input {
+    background-color: #eeee;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+main .log-in form input::placeholder,
+main .sign-up form input::placeholder {
+    text-transform: capitalize;
+    color: #cacaca;
+}
+
+main .log-in form input:focus,
+main .sign-up form input:focus {
+    outline: var(--peach) solid 1px;
+}
+
+main .log-in form a {
+    font-size: 12px;
+    color: var(--navy);
+    text-transform: capitalize;
+    margin: 10px 0;
+}
+
+main .log-in form button,
+main .sign-up form button {
+    padding: 15px;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    background-color: var(--navy);
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 200px;
+}
+
+main .log-in form button:hover,
+main .sign-up form button:hover {
+    box-shadow: 2px 2px 10px rgb(141 141 141);
+}
+
+
+main .overlay-container {
+    /* background-image: url(images/pexels-charlotte-may-5965699.jpg); */
+    background-image:
+    linear-gradient(#132651d6, #db979791),
+    url(images/pexels-charlotte-may-5965699.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    padding: 40px;
+    /* border-radius: 10px; */
+    text-align: center;
+    padding: 220px 100px;
+    /* box-shadow: 7px 6px 10px 0px rgb(66 64 64); */
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+main .overlay-container p {
+    color: var(--yellow);
+}
+
+main .overlay-container p:nth-child(1) {
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+main .overlay-container p:nth-child(2) {
+    font-size: 13px;
+}
+
+main .overlay-container button {
+    padding: 13px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    width: 200px;
+    font-weight: bold;
+    border: none;
+    margin-top: 50px;
+    background-color: var(--yellowLowOpacity);
+    color: white;
+    cursor: pointer;
+}
+
+main .overlay-container button:hover {
+    background-color: var(--peach);
+    box-shadow: 2px 2px 10px rgb(141 141 141);
+}
+
+main .active-log .left {
+    display: flex;
+}
+
+main .active-sign .right {
+    display: none;
+}
+
+
+main .active-log {
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+main .active-sign {
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
